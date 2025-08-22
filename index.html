@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palak Nagar | Biotechnologist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark background */
+            color: #d1d5db; /* Light gray text */
+        }
+
+        /* Hero section background animation */
+        #hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            color: rgba(59, 130, 246, 0.25); /* Semi-transparent blue for icons */
+            opacity: 0;
+            animation: float 25s infinite linear;
+            font-size: 2rem; /* Base size for icons */
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Scroll-triggered animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom styles for sections */
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #3b82f6; /* Blue accent */
+            border-radius: 2px;
+        }
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #374151; /* Gray-700 */
+        }
+        .timeline-item:last-child {
+            border-left: none;
+            padding-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5625rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: #3b82f6; /* Blue-500 */
+            border-radius: 50%;
+            border: 2px solid #111827;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Palak Nagar</a>
+            <div class="hidden md:flex space-x-8 text-gray-300">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#presentations" class="hover:text-blue-400 transition-colors">Presentations</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen flex items-center justify-center text-center text-white">
+        <div class="z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Palak Nagar</h1>
+            <p class="text-xl md:text-2xl font-light text-blue-300 mb-8">Innovating at the Intersection of Biology & Technology</p>
+            <a href="#about" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+                Explore My Work
+            </a>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- About Section -->
+        <section id="about" class="py-20 reveal">
+            <h2 class="section-title text-3xl font-bold text-center text-white mb-12">About Me</h2>
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <img src="linkedin proile.jpg" 
+                         alt="Palak Nagar" 
+                         class="rounded-full shadow-lg w-64 h-64 object-cover mx-auto border-4 border-blue-500"
+                         onerror="this.onerror=null;this.src='https://placehold.co/256x256/3b82f6/ffffff?text=PN';">
+                </div>
+                <div class="md:w-2/3 text-center md:text-left">
+                     <p class="text-lg leading-relaxed">
+                        A results-driven Biotechnologist with over 4 years of hands-on experience in Molecular Biology and Immunotoxicology. My expertise lies in flow cytometry, experimental optimization, and data reporting. I am passionate about leveraging cutting-edge techniques to contribute to meaningful research in toxicology, cell analysis, and drug development.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 reveal">
+            <h2 class="section-title text-3xl font-bold text-center text-white mb-16">Core Competencies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="skill-card bg-gray-800 rounded-lg p-6 text-center">
+                    <div class="text-4xl text-blue-400 mb-4"><i class="fas fa-vial"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Wet Lab</h3>
+                    <p class="text-gray-400 text-sm">SDS-PAGE, ELISA, Western blot, PCR, qPCR, Cell Culture, DNA/RNA Extraction, Protein Purification</p>
+                </div>
+                <div class="skill-card bg-gray-800 rounded-lg p-6 text-center">
+                    <div class="text-4xl text-blue-400 mb-4"><i class="fas fa-dna"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Molecular Biology</h3>
+                    <p class="text-gray-400 text-sm">Nucleic Acid Extraction, DNA Sequencing, CRISPR, Mutagenesis, FlowJo, GraphPad Prism</p>
+                </div>
+                <div class="skill-card bg-gray-800 rounded-lg p-6 text-center">
+                    <div class="text-4xl text-blue-400 mb-4"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Software & Tools</h3>
+                    <p class="text-gray-400 text-sm">MS Office Suite, FACS Sorting, LIMS, ELNs, Data Visualization, Python, C++</p>
+                </div>
+                <div class="skill-card bg-gray-800 rounded-lg p-6 text-center">
+                    <div class="text-4xl text-blue-400 mb-4"><i class="fas fa-file-contract"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Compliance</h3>
+                    <p class="text-gray-400 text-sm">GLP/GCP, SOPs, Biosafety Protocols, Regulatory Documentation, TSRs, Audit Support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 reveal">
+            <h2 class="section-title text-3xl font-bold text-center text-white mb-16">Career Journey</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline-item">
+                    <p class="text-sm text-blue-400 mb-1">Sept 2024 - Apr 2025</p>
+                    <h3 class="text-xl font-semibold text-white">Scientific Researcher, Immunotoxicology</h3>
+                    <p class="text-gray-400">GlaxoSmithKline, Collegeville, PA</p>
+                </div>
+                <div class="timeline-item">
+                    <p class="text-sm text-blue-400 mb-1">Oct 2023 - Sept 2024</p>
+                    <h3 class="text-xl font-semibold text-white">Molecular Biology Researcher</h3>
+                    <p class="text-gray-400">Texas A&M University, College Station, TX</p>
+                </div>
+                <div class="timeline-item">
+                    <p class="text-sm text-blue-400 mb-1">Mar 2019 - Dec 2021</p>
+                    <h3 class="text-xl font-semibold text-white">Genetic Engineering Assistant</h3>
+                    <p class="text-gray-400">Vezeo, Ahmedabad, India</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 reveal">
+            <h2 class="section-title text-3xl font-bold text-center text-white mb-16">Featured Project</h2>
+            <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden md:flex">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/1e3a8a/93c5fd?text=Scaffold+Engineering" alt="Biocompatible Scaffolds" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 md:w-1/2">
+                    <h3 class="text-2xl font-bold text-white mb-3">Biocompatible Scaffold Engineering</h3>
+                    <p class="text-gray-400 mb-4">Pioneered biomaterial research using discarded eggshells to engineer next-generation biocompatible scaffolds for tissue engineering applications.</p>
+                    <span class="inline-block bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full mr-2 mb-2">Biomaterials</span>
+                    <span class="inline-block bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full mr-2 mb-2">Tissue Engineering</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Presentations Section -->
+        <section id="presentations" class="py-20 reveal">
+            <h2 class="section-title text-3xl font-bold text-center text-white mb-16">Presentations & Publications</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Presentation Item 1 -->
+                <div class="bg-gray-800/50 rounded-lg p-6 transition-all duration-300 hover:bg-gray-800 hover:shadow-xl hover:scale-105">
+                    <p class="text-sm text-blue-400 mb-1">Student Research Week Poster</p>
+                    <h3 class="text-xl font-semibold text-white mb-2">β-lactamase Enzymes in Antibiotic Resistance</h3>
+                    <p class="text-gray-400 text-sm">Presented research on real-time activity assays of β-lactamases in E. coli to understand and combat antibiotic resistance mechanisms.</p>
+                </div>
+                <!-- Presentation Item 2 -->
+                <div class="bg-gray-800/50 rounded-lg p-6 transition-all duration-300 hover:bg-gray-800 hover:shadow-xl hover:scale-105">
+                    <p class="text-sm text-blue-400 mb-1">GSK Internship Presentation</p>
+                    <h3 class="text-xl font-semibold text-white mb-2">Proteomic Stabilizers for RBC Storage</h3>
+                    <p class="text-gray-400 text-sm">Evaluated the efficacy of proteomic stabilizers for the extended storage and subsequent analysis of NHP red blood cells.</p>
+                </div>
+                <!-- Presentation Item 3 -->
+                <div class="bg-gray-800/50 rounded-lg p-6 transition-all duration-300 hover:bg-gray-800 hover:shadow-xl hover:scale-105">
+                    <p class="text-sm text-blue-400 mb-1">Academic Project</p>
+                    <h3 class="text-xl font-semibold text-white mb-2">Scaffolding in Tissue Engineering</h3>
+                    <p class="text-gray-400 text-sm">Explored the design, function, and application of various biomaterial scaffolds in regenerating biological tissues like ligaments and skin.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center reveal">
+            <h2 class="section-title text-3xl font-bold text-white mb-8">Get In Touch</h2>
+            <p class="max-w-xl mx-auto mb-8 text-lg">I'm open to discussing new opportunities and collaborations. Feel free to reach out!</p>
+            <div class="flex justify-center space-x-6 text-4xl">
+                <a href="https://www.linkedin.com/in/palak-nagar26" class="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:palaknagar26@gmail.com" class="text-gray-400 hover:text-blue-400 transition-transform transform hover:scale-110">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center text-gray-500 py-8">
+        <p>&copy; 2025 Palak Nagar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Particle animation script
+        const hero = document.getElementById('hero');
+        const icons = ['fas fa-vial', 'fas fa-flask', 'fas fa-dna', 'fas fa-atom', 'far fa-circle'];
+
+        for (let i = 0; i < 50; i++) {
+            let particle = document.createElement('i');
+            const iconClass = icons[Math.floor(Math.random() * icons.length)];
+            particle.className = `particle ${iconClass}`;
+            
+            let size = Math.random() * 30 + 10; // font size between 10px and 40px
+            particle.style.fontSize = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 25}s`;
+            particle.style.animationDuration = `${Math.random() * 15 + 10}s`; // duration between 10s and 25s
+            
+            hero.appendChild(particle);
+        }
+
+        // Scroll reveal animation script
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+    </script>
+
+</body>
+</html>
